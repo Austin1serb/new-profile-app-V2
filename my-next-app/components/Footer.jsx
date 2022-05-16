@@ -1,4 +1,3 @@
-import React from 'react'
 import Icon from './Icon';
 import '../styles/footer.scss'
 
@@ -44,7 +43,7 @@ const Footer = ({ homeRef }) => {
 
 
             <div className='footer-text'>
-                <p>Austin Serb ©2024</p>
+                <p>Austin Serb ©2021</p>
             </div>
         </footer>
     )

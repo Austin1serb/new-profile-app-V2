@@ -12,6 +12,7 @@ import Project from "../components/Project";
 import FooterSkeleton from "../skeletons/FooterSkeleton";
 import ContactSkeleton from "../skeletons/ContactSkeleton";
 import Popup from "@/components/Popup";
+import HireTracker from "@/components/HireTracker";
 
 interface ComponentProps {}
 
@@ -40,10 +41,10 @@ const Contact = dynamic<ComponentProps>(() => import("../components/Contact"), {
   loading: () => <ContactSkeleton />,
 });
 
-const Home = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [screenWidth, setScreenWidth] = useState(0); // Initialized with window.innerWidth
-  const [screenHeight, setScreenHeight] = useState(0); // Initialized with window.innerHeight
+const Home: React.FC = () => {
+  const [screenWidth, setScreenWidth] = useState<number>();
+  const [screenHeight, setScreenHeight] = useState<number>();
+
   const phrases = [
     "a Software Developer. ",
     "a Tech Lover. ",
@@ -93,30 +94,22 @@ const Home = () => {
   }, [currentPhrase, isDeleting, loopNum, typingSpeed]);
 
   // Define the function to handle the resize event
-  function handleResize() {
-    const isMobileDevice =
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      );
-    setIsMobile(isMobileDevice);
-    if (screenWidth < 800) {
-      setIsMobile(true);
-    }
+  const handleResize = () => {
     setScreenWidth(window.innerWidth);
     setScreenHeight(window.innerHeight);
-  }
+  };
 
-  // Use the custom hook outside of useEffect
+  // Use a throttled version of the resize handler
   const throttledResize = useThrottle(handleResize, 200);
 
   useEffect(() => {
-    // Add the event listener
+    // Add the resize event listener
     window.addEventListener("resize", throttledResize);
 
-    // Call the handler once to set the initial state
+    // Set initial dimensions
     handleResize();
 
-    // Cleanup
+    // Cleanup event listener
     return () => {
       window.removeEventListener("resize", throttledResize);
     };
@@ -142,8 +135,10 @@ const Home = () => {
     setShowPopup(false);
   };
 
+  const isMobile = (screenWidth ?? 0) < 800;
   return (
     <div className="main-container">
+      <HireTracker />
       {showPopup && <Popup closePopup={closePopup} />}
 
       <div className="top-container" ref={homeRef}></div>
@@ -290,7 +285,7 @@ const Home = () => {
                 ]} // Array of image URLs
                 projectDetails="Elegantly designed eCommerce site with a user-friendly cart, responsive layout, and seamless user registration. Features a comprehensive Admin Dashboard for complete product and order management."
                 liveSiteUrl="https://herbanaturalco.com/"
-                githubUrl="https://github.com/Austin1serb/Xhale-Vapor-N-Smoke"
+                githubUrl={null}
                 isEven={1 % 2 === 0}
               />
             </Suspense>
@@ -315,7 +310,7 @@ const Home = () => {
                 ]}
                 projectDetails="This project represents the frontend of a modern Car Dealership website, designed to showcase available vehicles and provide detailed information to potential buyers. Features include a dynamic listing page, detailed vehicle profiles, compare features, and a user-friendly interface to enhance the car buying experience."
                 liveSiteUrl="https://east-lake-auto-brokers.vercel.app/"
-                githubUrl="https://github.com/Austin1serb/EastLakeAutoBrokers.git"
+                githubUrl={null}
                 isEven={2 % 2 === 0}
               />
             </Suspense>
