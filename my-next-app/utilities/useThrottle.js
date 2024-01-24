@@ -1,5 +1,5 @@
 
-function Throttle(func, limit) {
+function useThrottle(func, limit) {
     let lastFunc;
     let lastRan;
     return function () {
@@ -20,4 +20,4 @@ function Throttle(func, limit) {
     }
 }
 
-export default Throttle
+export default useThrottle

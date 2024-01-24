@@ -165,7 +165,7 @@ canvas {
 }
 
 .my-work {
-    z-index: 2;
+    z-index: 3;
     width: 100%;
     background-color: transparent !important
 }

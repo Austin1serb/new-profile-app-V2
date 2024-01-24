@@ -1,6 +1,6 @@
 /* eslint-disable react/no-direct-mutation-state */
 import React, { useEffect, useRef } from 'react';
-import Throttle from '../utilities/Throttle';
+import useThrottle from '../utilities/useThrottle';
 import '../styles/index.css'
 
 
@@ -337,7 +337,7 @@ const CanvasDots = ({ isMobile, screenWidth, screenHeight }) => {
 
 
         }
-        const handleMouseMove = Throttle((e) => {
+        const handleMouseMove = useThrottle((e) => {
             mousePosition.x = e.pageX;
             mousePosition.y = e.pageY;
 

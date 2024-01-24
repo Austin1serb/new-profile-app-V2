@@ -1,16 +1,46 @@
 import React from 'react'
 import profilePicture from '../assets/profile.jpg';
 import Image from 'next/image';
-import Icon from './Icon'
 import '../styles/index.css'
+import dynamic from 'next/dynamic';
 
+const Icon = dynamic(
+    () => new Promise(resolve => {
+      setTimeout(() => resolve(import('../components/Icon')), 1); // 3-second delay
+    }),
+    {
+      ssr: false, loading: () => (
+        <>
+        <style>
+        {`
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}
+      </style>
+        <div style={{
+            position:'absolute',
+            bottom:0,
+            left:'55%',
+            fontSize:'30px',
+            animation: 'spin 2s linear infinite', // Applying the animation
+        }}>
+            ⏳
+        </div>
+        </>
+      )
+    }
+  );
+  
 
 const About = () => {
+
     return (
-        <div className='about-container'>
+        <div className='about-container' >
             <div className='profile-picture-container'>
                 <div className="profile-picture">
-                    <div className="profile-box">
+                    <div className="profile-box" >
                         <div className="profile-box-color">
 
                             <div className="profile-picture-image">
@@ -37,9 +67,9 @@ const About = () => {
                     </div>
                 </div>
                 <div className='profile-description'>
-
+                    <div ></div>
                     <h2>
-                        As a passionate full-stack developer, I thrive in the ever-evolving world of web development, with a keen focus on JavaScript, React, Next.js, and Python. My enthusiasm is driven by the unique blend of creativity and logic that web development offers, constantly presenting new challenges and learning opportunities.
+                        As a passionate full-stack developer, I thrive in the ever-evolving world of web development, with a focus on JavaScript, React, Next.js, and Python. My enthusiasm is driven by the unique blend of creativity and logic that web development offers, constantly presenting new challenges and learning opportunities.
 
                         Expert in crafting seamless web experiences, I skillfully combine the versatility of Python for backend development with the advanced features of Next.js and React in the frontend. When I'm away from the keyboard, I enjoy drawing, staying active, and socializing, which bring fresh perspectives and balance to my coding life.</h2>
                 </div>

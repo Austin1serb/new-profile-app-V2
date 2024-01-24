@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import styles from '../styles/TopBar.module.css'
-import Throttle from '../utilities/Throttle'; // Import your throttle utility
+import  '../styles/TopBar.css'
+import useThrottle from '../utilities/useThrottle'; // Import your throttle utility
 
 const TopBar = ({ homeRef, aboutRef, projectsRef, contactRef }) => {
     const [activeSection, setActiveSection] = useState('');
@@ -27,7 +27,7 @@ const TopBar = ({ homeRef, aboutRef, projectsRef, contactRef }) => {
         };
 
         // Wrap the onScroll function with throttle
-        const throttledScroll = Throttle(onScroll, 300);
+        const throttledScroll = useThrottle(onScroll, 300);
 
         window.addEventListener('scroll', throttledScroll);
         return () => window.removeEventListener('scroll', throttledScroll);
