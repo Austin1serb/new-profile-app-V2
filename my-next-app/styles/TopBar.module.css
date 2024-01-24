@@ -1,0 +1,71 @@
+.topBar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282828;
+    color: #DCDCDC;
+    height: 80px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: visible;
+}
+
+
+.leftLinks {
+    color: DCDCDC;
+    display: flex;
+    gap: 20%;
+    font-size: 22px;
+    align-items: center;
+    margin-left: 40px;
+}
+.leftLinks button {
+    background: none;
+    border:none;
+
+}
+.leftLinks-button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.2s ease;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+.leftLinks-button:hover {
+    color: #FA4D31;
+}
+
+.leftLinks-button::after {
+    content: '';
+    display: block;
+    height: 0.1rem;
+    width: 0;
+    background: #FA4D31;
+    transition: width 0.3s ease;
+}
+
+
+.leftLinks-button:hover::after {
+    width: 100%;
+    color: #FA4D31
+        /* Full width on hover */
+}
+
+.leftLinks-button.active {
+    color: #FA4D31
+}
+
+
+.topBar-container {
+    cursor: pointer;
+    display: flex;
+    margin-right: 1px;
+}
+
