@@ -28,7 +28,23 @@ const Icon = React.memo(({ name, className, height, width }) => {
         }).catch(console.error);
     }, [name]);
 
-    return IconComponent ? <IconComponent className={className} height={height} width={width} /> : <div>Loading...</div>;
+    return IconComponent ? <IconComponent className={className} height={height} width={width} /> : <>
+        <style>
+            {`
+                     @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                     }
+    `}
+        </style>
+        <div style={{
+            fontSize: '30px',
+            animation: 'spin 2s linear infinite', // Applying the animation
+            zIndex:5,
+        }}>
+            ⏳
+        </div>
+    </>;
 });
 
 export default Icon;

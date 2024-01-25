@@ -1,7 +1,3 @@
-
-
-
-
 .project-container {
     display: flex;
     justify-content: space-between;
@@ -31,15 +27,16 @@
 }*/
 
 .project-slider {
- background-color: #282f48dc;
+    background-color: #282f48dc;
 
     padding: 30px 50px 50px 20px;
     margin-left: 30px;
     z-index: 2;
     /*border-radius:10px;*/
 }
+
 .project-slider-reverse {
- background-color:  #282f48dc;
+    background-color: #282f48dc;
 
     padding: 20px 10px 50px 40px;
     margin-left: 30px;
@@ -53,7 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .image-title {
@@ -63,7 +60,7 @@
 
 }
 
-.image-title span{
+.image-title span {
     color: #DCDCDC;
 
 }
@@ -112,7 +109,7 @@
     z-index: 2
 }
 
-.mobile-project-title h3 {
+.mobile-project-title  {
     display: none;
 }
 
@@ -121,10 +118,10 @@
     -webkit-text-stroke-color: currentColor;
     -webkit-text-stroke-width: .032em;
     white-space: nowrap;
-        font-size: 6.25rem;
-        margin: 0.05em 0;
-        display: inline-block;
-    
+    font-size: 6.25rem;
+    margin: 0.05em 0;
+    display: inline-block;
+
 }
 
 .text-outline-hover {
@@ -205,10 +202,11 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
+  
 
     -webkit-touch-callout: none;
     -khtml-user-select: none;
+    user-select: none;
     -ms-touch-action: pan-y;
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
@@ -485,12 +483,14 @@
     transition: opacity 0.3s ease;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    z-index: 5;
 }
 
 .slick-dots li.slick-active button:before {
     opacity: .75;
     transition: opacity 0.3s ease;
     color: #FA4D31;
+    z-index: 5;
 }
 
 
@@ -506,18 +506,17 @@
     .project-container-reverse {
         flex-direction: column;
         z-index: 2;
-        margin-left:5px;
+        margin-left: 5px;
     }
 
     .project-slider {
         padding: 60px;
         z-index: 2
-        
     }
+
     .project-slider-reverse {
         padding: 60px;
         z-index: 2
-        
     }
 
     .slick-list {
@@ -532,7 +531,8 @@
         text-align: left;
         z-index: 2
     }
-    .slick-dots li{
+
+    .slick-dots li {
         margin: 0 0px;
     }
 
@@ -577,7 +577,6 @@
         transform: translate(70px, -50px);
         font-size: clamp(1rem, 5vw, 2rem);
         z-index: 2
-
     }
 
     .project-details-mobile a {

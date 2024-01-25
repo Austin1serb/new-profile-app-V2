@@ -6,96 +6,41 @@ import useThrottle from '../utilities/useThrottle';
 import TopBar from '../components/TopBar';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import './globals.css';
+
 import '../styles/index.css'
-import useIntersectionObserver from '@/utilities/useIntersectionObsever';
+import ProjectSkeleton from '../skeletons/ProjectSkeleton';
+import Project from '../components/Project';
+import FooterSkeleton from '../skeletons/FooterSkeleton'
+import ContactSkeleton from '../skeletons/ContactSkeleton'
+interface ComponentProps {
+}
 
 const CanvasDots = dynamic(
     () => import('../components/CanvasDots'),
-    { ssr: false, loading: () => <Image src={'https://i.imgur.com/ORzQeVw.png'} width={1200} height={800} alt="backgound" className="connecting-dots-static"  /> }
+    { ssr: false, loading: () => <Image src={'https://i.imgur.com/ORzQeVw.png'} width={1200} height={800} alt="backgound" className="connecting-dots-static" /> }
 );
 const About = dynamic(
-    () => new Promise(resolve => {
-        // Increasing the delay to 3 seconds (3000 milliseconds) for testing
-        setTimeout(() => resolve(import('../components/Icon')), 3000);
-      }),
-    { ssr: true, loading: () => (
-        <>
-        <style jsx>{`
-            .project-container {
-                margin: 20px;
-    width: 90vw;            }
-            .mobile-project-title h3, .project-details h3, .project-details-cont span, .project-details-cont a, .carousel-inner .image-title, .image-img-container {
-                background: #ccc;
-                border-radius: 4px;
-                animation: pulse 1.5s infinite ease-in-out;
-            }
-            .mobile-project-title h3, .project-details h3 {
-                height: 20px;
-                width: 150px;
-            }
-            .project-details-cont span, .project-details-cont a {
-                height: 16px;
-                width: 100%;
-                margin: 8px 0;
-            }
-            .carousel-inner .image-title {
-                height: 16px;
-                width: 100px;
-                margin-bottom: 10px;
-            }
-            .image-img-container {
-                height: 359px;
-                width: 500px;
-            }
-            @keyframes pulse {
-                0%, 100% {
-                    opacity: 1;
-                }
-                50% {
-                    opacity: .5;
-                }
-            }
-        `}</style>
-        <div className="project-container">
-            <div className='mobile-project-title'>
-                <h3 className='text-outline'></h3>
-            </div>
-            <div className="project-slider">
-                <div className='carousel-inner'>
-                    <div className="image-title"></div>
-                    <div className='image-img-container'></div>
-                </div>
-            </div>
-            <div className="project-details">
-                <h3 className='text-outline'></h3>
-                <div className='project-details-cont'>
-                    <span></span>
-                    <a></a>
-                </div>
-            </div>
-            <div className='project-details-mobile'>
-                <a className='text-outline'></a>
-                <span> | </span>
-                <a className='text-outline'></a>
-            </div>
-        </div>
-        </>
-    )}
-);
-
-const Project = dynamic(
-    () => import('../components/Project'),
-    { ssr: false, loading: () => <></> }
+    () => import('../components/About'),
+    { ssr: true, loading: () => <></> }
 );
 const Footer = dynamic(
     () => import('../components/Footer'),
-    { ssr: true, loading: () => <></> }
+    { ssr: true, loading: () => (
+      <FooterSkeleton/>
+    )}
 );
-const Fish = dynamic(
-    () => import('../components/Fish'),
-    { ssr: true, loading: () => <></> }
+const Contact = dynamic<ComponentProps>(
+    () => import('../components/Contact'),
+    { ssr: true, loading: () => (
+      <ContactSkeleton/>
+    )}
 );
+//const Contact = dynamic(
+//    () => import('../components/Contact'),
+//    { ssr:
+
+//    true, loading: () => <></> }
+//);
 
 
 
@@ -113,9 +58,7 @@ const Home = () => {
     const projectsRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
 
-    const aboutOnScreen = useIntersectionObserver(aboutRef, { threshold: 1 });
-    const projectsOnScreen = useIntersectionObserver(projectsRef, { threshold: 1 });
-    const contactOnScreen = useIntersectionObserver(contactRef, { threshold: 0.5 });
+
 
 
 
@@ -215,16 +158,16 @@ const Home = () => {
                     projectsRef={projectsRef}
                     contactRef={contactRef}
                 />
-                <section className="about-section" >
-                    <div ref={aboutRef} className='my-work-container'>
+                <section className="about-section" ref={aboutRef}>
+                    <div className='my-work-container'>
                         <h2 className='about-title'>About</h2>
                         <div className='about-title-underline'></div>
                     </div>
-                    {aboutOnScreen &&
-                        <Suspense fallback={<></>}>
-                            <About />
-                        </Suspense>
-                    }
+
+                    <Suspense fallback={<></>}>
+                        <About />
+                    </Suspense>
+
 
                 </section>
                 <section className='projects'>
@@ -232,10 +175,10 @@ const Home = () => {
                         <h2 className='about-title'>Projects</h2>
                         <div className='about-title-underline'></div>
                     </div>
-                    {projectsOnScreen &&
+                    
                         <div className='projects-container'>
-
-                            <Suspense fallback={<></>}>
+                            <Suspense fallback={<ProjectSkeleton isEven={1} />
+                            }>
                                 <Project
                                     projectName="Ecommerce Website"
                                     images={[
@@ -252,7 +195,7 @@ const Home = () => {
 
 
                             </Suspense>
-                            <Suspense fallback={<></>}>
+                            <Suspense fallback={<ProjectSkeleton isEven={2} />}>
 
 
 
@@ -272,7 +215,7 @@ const Home = () => {
 
 
                             </Suspense>
-                            <Suspense fallback={<></>}>
+                            <Suspense fallback={<ProjectSkeleton isEven={3} />}>
 
 
 
@@ -290,7 +233,7 @@ const Home = () => {
 
 
                             </Suspense>
-                            <Suspense fallback={<></>}>
+                            <Suspense fallback={<ProjectSkeleton isEven={4} />}>
 
                                 <Project
                                     projectName="Task Manager"
@@ -307,29 +250,26 @@ const Home = () => {
 
 
                             </Suspense>
-                        </div>}
+                        </div>
 
                 </section>
                 <section className='about' ref={contactRef}>
-                    <div  className='my-work-container'>
+                    <div className='my-work-container'>
                         <h2 className='about-title'>Contact</h2>
                         <div className='about-title-underline'></div>
                     </div>
                     <div className='contact-container' >
                         {/*<ContactForm />*/}
-                        {contactOnScreen &&
-                            <Fish />
-                        }
+                        <Suspense fallback={  <ContactSkeleton/>}>
+                            <Contact />
+                            </Suspense >
 
                     </div>
                 </section>
-                {contactOnScreen &&
                     <Suspense fallback={<></>}>
                         <Footer homeRef={homeRef} />
                     </Suspense>
-                }
-
-
+                
             </main>
 
         </div>

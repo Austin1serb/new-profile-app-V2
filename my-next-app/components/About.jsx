@@ -2,37 +2,9 @@ import React from 'react'
 import profilePicture from '../assets/profile.jpg';
 import Image from 'next/image';
 import '../styles/index.css'
-import dynamic from 'next/dynamic';
+import Icon from '../components/Icon'
 
-const Icon = dynamic(
-    () => new Promise(resolve => {
-      setTimeout(() => resolve(import('../components/Icon')), 1); // 3-second delay
-    }),
-    {
-      ssr: false, loading: () => (
-        <>
-        <style>
-        {`
-          @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
-        `}
-      </style>
-        <div style={{
-            position:'absolute',
-            bottom:0,
-            left:'55%',
-            fontSize:'30px',
-            animation: 'spin 2s linear infinite', // Applying the animation
-        }}>
-            ⏳
-        </div>
-        </>
-      )
-    }
-  );
-  
+
 
 const About = () => {
 

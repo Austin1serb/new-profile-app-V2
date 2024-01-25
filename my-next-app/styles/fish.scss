@@ -2,7 +2,7 @@
     position: relative;
     z-index: 5;
     margin-top: 50px;
-    margin-bottom: 600px;
+    margin-bottom: 620px;
 }
 .fish-container{
     position: absolute;
@@ -35,8 +35,8 @@
 }
 
 
-$color: rgba(255, 80, 80, 1);
-$colorSecondary: #ff6100;
+$color: rgb(254, 78, 78);
+$colorSecondary: rgb(255, 123, 0);
 
 
 @keyframes fish {
@@ -102,7 +102,7 @@ $colorSecondary: #ff6100;
 }
 .container {
     position: relative;
-    left:-100%;
+    left:-108%;
     background-color: #282F48;
     border-radius: 10px;
     margin: 40px;
@@ -157,7 +157,7 @@ $colorSecondary: #ff6100;
     background: linear-gradient($colorSecondary, $color);
     box-shadow: 0 2px 12px -3px $color;
     animation: btn 6.0s 3s infinite ease-in-out;
-    opacity: 0.9;
+    opacity: 0.8;
     transition: all 0.3s;
 
     &:hover {
@@ -199,19 +199,20 @@ $colorSecondary: #ff6100;
     background-color: transparent;
     border-bottom: 2px solid #F5F5F5;
     font: inherit;
-    font-size: 14px;
-    line-height: 30px;
+    font-size: 28px;
+    line-height: 40px;
     position: relative; // Make sure the position is set to relative
 
     &:focus,
     &:valid {
         outline: 0;
+        background: #282828;
         border-bottom-color: #FA4D31;
     }
 
     &:focus+.input_label,
     &:valid+.input_label {
-        color: #665856;
+        color: #9f918f;
         transform: translate(5px, -20px);
         padding: 5px;
         font-size: 12px;
@@ -259,4 +260,24 @@ $colorSecondary: #ff6100;
 
     cursor: not-allowed;
     filter: grayscale(100%); /* Apply grayscale */
+}
+
+
+
+//skeleton::after
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.bg-gray-300 {
+    background-color: rgba(204, 204, 204, 0.75); // Or any color you prefer
 }
