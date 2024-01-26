@@ -4,17 +4,20 @@ import Icon from './Icon'
 import '../styles/fish.scss'
 
 const Contact = () => {
+
+    
     const form = useRef();
     const [showPopover, setShowPopover] = useState(false);
     const [isButtonDisabled, setIsButtonDisabled] = useState(false); // New state for button disabled status
     const [buttonText, setButtonText] = useState('Send'); // New state for button text
-
+    const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+    const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsButtonDisabled(true); // Disable the button when the form is submitted
 
-        emailjs.sendForm('service_prhqhog', 'template_yxprl1c', form.current, 'o-xepks5WKT57wXqd')
+        emailjs.sendForm(serviceId, 'template_yxprl1c', form.current, userId)
             .then((result) => {
                 console.log('Email successfully sent!', result.text);
                 setShowPopover(true);
