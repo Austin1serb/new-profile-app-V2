@@ -21,7 +21,6 @@
     margin: 0;
     padding: 0;
     color: #dcdcdc;
-    scroll-behavior: smooth
 }
 
 ::selection {
@@ -61,7 +60,7 @@ canvas {
 }
 
 .connecting-dots {
-    background-color: #1a1a1a
+    background-color: #171717
 }
 
 .separation {

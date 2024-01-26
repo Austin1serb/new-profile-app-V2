@@ -6,8 +6,8 @@ import useThrottle from '../utilities/useThrottle';
 import TopBar from '../components/TopBar';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-
 import '../styles/index.css'
+import './globals.css'
 import ProjectSkeleton from '../skeletons/ProjectSkeleton';
 import Project from '../components/Project';
 import FooterSkeleton from '../skeletons/FooterSkeleton'
@@ -182,9 +182,9 @@ const Home = () => {
                                 <Project
                                     projectName="Ecommerce Website"
                                     images={[
-                                        { url: 'https://i.imgur.com/dkswWBC.gif', title: 'Home Page & DropDown' },
-                                        { url: 'https://i.imgur.com/ifEoNri.gif', title: 'Shop Page & CheckOut' },
-                                        { url: 'https://i.imgur.com/ccGzdP6.gif', title: 'Admin Dashboard' }
+                                        { url: 'https://i.imgur.com/yVhHZMb.mp4', title: 'Home Page & DropDown' },
+                                        { url: 'https://i.imgur.com/ifEoNri.mp4', title: 'Shop Page & CheckOut' },
+                                        { url: 'https://i.imgur.com/4CX0UaN.mp4', title: 'Admin Dashboard' }
                                     ]} // Array of image URLs
                                     projectDetails='Full product management, User Auth, Payment processing | React | Node.js | Express.js | MongoDB | Square SDK | Clouninary API | Google API'
                                     liveSiteUrl="https://herbanaturalco.com/"
@@ -203,9 +203,9 @@ const Home = () => {
                                     projectName="VS Code Extension"
                                     images={[
                                         { url: 'https://i.imgur.com/vd78xiw.png', title: 'Avaliable on VScode' },
-                                        { url: 'https://i.imgur.com/YsJ7Zwb.gif', title: 'Complex Code Generation' },
-                                        { url: 'https://i.imgur.com/B73mnGD.gif', title: 'Context Aware' },
-                                        { url: 'https://i.imgur.com/vRPRj0i.gif', title: 'Great at algorithms' }
+                                        { url: 'https://i.imgur.com/YsJ7Zwb.mp4', title: 'Complex Code Generation' },
+                                        { url: 'https://i.imgur.com/B73mnGD.mp4', title: 'Context Aware' },
+                                        { url: 'https://i.imgur.com/vRPRj0i.mp4', title: 'Great at algorithms' }
                                     ]} // Array of image URLs
                                     projectDetails="This extension revolutionizes your coding experience by introducing context-aware functionality. It intelligently recognizes the programming language you're working in and utilizes your comments to generate optimal code snippets/Full Documents."
                                     liveSiteUrl="https://marketplace.visualstudio.com/items?itemName=SerbByteDevelopment.gpt-code-generator"

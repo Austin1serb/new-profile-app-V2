@@ -6,9 +6,9 @@ import '../styles/footer.scss'
 // Use the interface in your Footer component
 const Footer = ({ homeRef }) => {
     const scrollToRef = () => {
-        if (ref.current) {
+        if (homeRef.current) {
             window.scrollTo({
-                top: ref.current.offsetTop,
+                top: homeRef.current.offsetTop,
                 behavior: 'smooth'
             });
         }
