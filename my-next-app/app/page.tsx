@@ -93,26 +93,33 @@ const Home = () => {
         }
 
         return () => clearTimeout(timer);
-    }, [currentPhrase, isDeleting, loopNum, phrases, typingSpeed]);
+    }, [currentPhrase, isDeleting, loopNum, typingSpeed]);
 
 
-    useEffect(() => {
-        function handleResize() {
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                setIsMobile(true);
-            } else {
-                setIsMobile(false)
-            }
-            setScreenWidth(window.innerWidth); // Update screenWidth state
-            setScreenHeight(window.innerHeight); // Update screenHeight state
-        }
-        const throttledResize = useThrottle(handleResize, 200);
-        window.addEventListener('resize', throttledResize);
-        handleResize();
-        return () => {
-            window.removeEventListener('resize', throttledResize);
-        };
-    }, []);
+  // Define the function to handle the resize event
+  function handleResize() {
+    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    setIsMobile(isMobileDevice);
+    setScreenWidth(window.innerWidth);
+    setScreenHeight(window.innerHeight);
+}
+
+// Use the custom hook outside of useEffect
+const throttledResize = useThrottle(handleResize, 200);
+
+useEffect(() => {
+    // Add the event listener
+    window.addEventListener('resize', throttledResize);
+
+    // Call the handler once to set the initial state
+    handleResize();
+
+    // Cleanup
+    return () => {
+        window.removeEventListener('resize', throttledResize);
+    };
+}, [throttledResize]);
+
 
     const scrollToMyWork = () => {
         const section = document.getElementById('my-work');
