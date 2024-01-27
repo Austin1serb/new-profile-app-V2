@@ -21,8 +21,12 @@
     margin: 0;
     padding: 0;
     color: #dcdcdc;
+    
 }
-
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
 ::selection {
     background-color: #073ca1;
     color: #dcdcdc

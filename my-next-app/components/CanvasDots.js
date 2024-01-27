@@ -170,7 +170,7 @@ const CanvasDots = ({ isMobile, screenWidth, screenHeight }) => {
         const missile = new Missile();
 
         const dots = {
-            nb: isMobile ? 400 : 350,
+            nb: isMobile ? 280 : 350,
             distance: isMobile ? 60 : 90,
             array: [],
             mouseDotIndex: 1

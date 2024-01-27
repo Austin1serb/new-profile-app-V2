@@ -36,6 +36,7 @@
     overflow: hidden;
     transition: color 0.2s ease;
     font-size: clamp(1rem, 3vw, 1.5rem);
+
 }
 
 .leftLinks-button:hover {
@@ -43,6 +44,10 @@
 }
 
 .leftLinks-button::after {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
     content: '';
     display: block;
     height: 0.1rem;

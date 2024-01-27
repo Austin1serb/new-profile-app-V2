@@ -105,6 +105,9 @@ const Home = () => {
     function handleResize() {
         const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         setIsMobile(isMobileDevice);
+        if(screenWidth<800){
+            setIsMobile(true)
+        }
         setScreenWidth(window.innerWidth);
         setScreenHeight(window.innerHeight);
     }

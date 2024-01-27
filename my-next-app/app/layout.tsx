@@ -1,3 +1,5 @@
+import 'normalize.css';
+
 
 export const metadata={
   icons: {
