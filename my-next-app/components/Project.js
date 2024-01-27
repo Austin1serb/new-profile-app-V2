@@ -56,7 +56,7 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl, 
 
 
                             ) : null}
-                        <a aria-label={`Learn more about ${projectName}`} className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} targetlear="_blank" rel="noopener noreferrer">Learn More</a>
+                        <a aria-label={`Learn more about ${projectName}`} className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} target="_blank" rel="noopener noreferrer">Learn More</a>
                     </div>
                 </div>
 
