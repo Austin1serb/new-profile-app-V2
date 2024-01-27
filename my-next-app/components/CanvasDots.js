@@ -337,7 +337,7 @@ const CanvasDots = ({ isMobile, screenWidth, screenHeight }) => {
 
 
         }
-        const handleMouseMove = useThrottle((e) => {
+        const handleMouseMove = (e)=> {
             mousePosition.x = e.pageX;
             mousePosition.y = e.pageY;
 
@@ -346,7 +346,7 @@ const CanvasDots = ({ isMobile, screenWidth, screenHeight }) => {
             const mouseDot = dots.array[dots.mouseDotIndex];
             mouseDot.updatePosition(e.pageX, e.pageY);
             mouseDot.setFixed(true); // Set the dot as fixed
-        }, 10)
+        }
         canvas.addEventListener('click', handleClick);
         window.addEventListener('mousemove', handleMouseMove);
 

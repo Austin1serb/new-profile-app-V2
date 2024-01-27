@@ -43,7 +43,7 @@ const About = () => {
                     <h2>
                         As a passionate full-stack developer, I thrive in the ever-evolving world of web development, with a focus on JavaScript, React, Next.js, and Python. My enthusiasm is driven by the unique blend of creativity and logic that web development offers, constantly presenting new challenges and learning opportunities.
 
-                        Expert in crafting seamless web experiences, I skillfully combine the versatility of Python for backend development with the advanced features of Next.js and React in the frontend. When I'm away from the keyboard, I enjoy drawing, staying active, and socializing, which bring fresh perspectives and balance to my coding life.</h2>
+                        Expert in crafting seamless web experiences, I skillfully combine the versatility of Python for backend development with the advanced features of Next.js and React in the frontend. When I&apos;m away from the keyboard, I enjoy drawing, staying active, and socializing, which bring fresh perspectives and balance to my coding life.</h2>
                 </div>
             </div>
             <div className="skills-section">
@@ -209,7 +209,6 @@ const About = () => {
                             <Icon className='gray' name='git' height={50} width={50} />
                         </div>
                     </div>
-
                     {/* MATERIAL UI */}
                     <div className="skill-icon">
                         <div className='skill-title' >MATERIAL UI</div >

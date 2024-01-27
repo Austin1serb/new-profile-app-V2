@@ -5,33 +5,35 @@ import useThrottle from '../utilities/useThrottle'; // Import your throttle util
 const TopBar = ({ homeRef, aboutRef, projectsRef, contactRef }) => {
     const [activeSection, setActiveSection] = useState('');
 
+    const onScroll = () => {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        // Define the positions of each section
+        const homePosition = homeRef.current.offsetTop;
+        const aboutPosition = aboutRef.current.offsetTop;
+        const projectsPosition = projectsRef.current.offsetTop;
+        const contactPosition = contactRef.current.offsetTop;
+
+        // Determine the active section
+        if (scrollPosition >= contactPosition) {
+            setActiveSection('contact');
+        } else if (scrollPosition >= projectsPosition) {
+            setActiveSection('projects');
+        } else if (scrollPosition >= aboutPosition) {
+            setActiveSection('about');
+        } else if (scrollPosition >= homePosition) {
+            setActiveSection('home');
+        }
+    };
+
+    // Wrap the onScroll function with throttle
+    const throttledScroll = useThrottle(onScroll, 300);
+
+
     useEffect(() => {
-        const onScroll = () => {
-            const scrollPosition = window.scrollY + window.innerHeight / 2;
-            // Define the positions of each section
-            const homePosition = homeRef.current.offsetTop;
-            const aboutPosition = aboutRef.current.offsetTop;
-            const projectsPosition = projectsRef.current.offsetTop;
-            const contactPosition = contactRef.current.offsetTop;
-
-            // Determine the active section
-            if (scrollPosition >= contactPosition) {
-                setActiveSection('contact');
-            } else if (scrollPosition >= projectsPosition) {
-                setActiveSection('projects');
-            } else if (scrollPosition >= aboutPosition) {
-                setActiveSection('about');
-            } else if (scrollPosition >= homePosition) {
-                setActiveSection('home');
-            }
-        };
-
-        // Wrap the onScroll function with throttle
-        const throttledScroll = useThrottle(onScroll, 300);
 
         window.addEventListener('scroll', throttledScroll);
         return () => window.removeEventListener('scroll', throttledScroll);
-    }, [homeRef, aboutRef, projectsRef, contactRef]);
+    }, [homeRef, aboutRef, projectsRef, contactRef,throttledScroll]);
 
 
     const scrollToRef = (ref) => {
