@@ -12,6 +12,7 @@ import ProjectSkeleton from '../skeletons/ProjectSkeleton';
 import Project from '../components/Project';
 import FooterSkeleton from '../skeletons/FooterSkeleton'
 import ContactSkeleton from '../skeletons/ContactSkeleton'
+import Head from 'next/head';
 interface ComponentProps {
 }
 
@@ -25,15 +26,19 @@ const About = dynamic(
 );
 const Footer = dynamic(
     () => import('../components/Footer'),
-    { ssr: true, loading: () => (
-      <FooterSkeleton/>
-    )}
+    {
+        ssr: true, loading: () => (
+            <FooterSkeleton />
+        )
+    }
 );
 const Contact = dynamic<ComponentProps>(
     () => import('../components/Contact'),
-    { ssr: true, loading: () => (
-      <ContactSkeleton/>
-    )}
+    {
+        ssr: true, loading: () => (
+            <ContactSkeleton />
+        )
+    }
 );
 //const Contact = dynamic(
 //    () => import('../components/Contact'),
@@ -96,29 +101,29 @@ const Home = () => {
     }, [currentPhrase, isDeleting, loopNum, typingSpeed]);
 
 
-  // Define the function to handle the resize event
-  function handleResize() {
-    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    setIsMobile(isMobileDevice);
-    setScreenWidth(window.innerWidth);
-    setScreenHeight(window.innerHeight);
-}
+    // Define the function to handle the resize event
+    function handleResize() {
+        const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        setIsMobile(isMobileDevice);
+        setScreenWidth(window.innerWidth);
+        setScreenHeight(window.innerHeight);
+    }
 
-// Use the custom hook outside of useEffect
-const throttledResize = useThrottle(handleResize, 200);
+    // Use the custom hook outside of useEffect
+    const throttledResize = useThrottle(handleResize, 200);
 
-useEffect(() => {
-    // Add the event listener
-    window.addEventListener('resize', throttledResize);
+    useEffect(() => {
+        // Add the event listener
+        window.addEventListener('resize', throttledResize);
 
-    // Call the handler once to set the initial state
-    handleResize();
+        // Call the handler once to set the initial state
+        handleResize();
 
-    // Cleanup
-    return () => {
-        window.removeEventListener('resize', throttledResize);
-    };
-}, [throttledResize]);
+        // Cleanup
+        return () => {
+            window.removeEventListener('resize', throttledResize);
+        };
+    }, [throttledResize]);
 
 
     const scrollToMyWork = () => {
@@ -129,7 +134,6 @@ useEffect(() => {
     };
 
     return (
-
         <div className='main-container'>
             <div className='top-container' ref={homeRef}></div>
             <header className='header-container'>
@@ -171,9 +175,9 @@ useEffect(() => {
                         <div className='about-title-underline'></div>
                     </div>
 
-                    <Suspense fallback={<></>}>
-                        <About />
-                    </Suspense>
+
+                    <About />
+
 
 
                 </section>
@@ -182,82 +186,82 @@ useEffect(() => {
                         <h2 className='about-title'>Projects</h2>
                         <div className='about-title-underline'></div>
                     </div>
-                    
-                        <div className='projects-container'>
-                            <Suspense fallback={<ProjectSkeleton isEven={1} />
-                            }>
-                                <Project
-                                    projectName="Ecommerce Website"
-                                    images={[
-                                        { url: 'https://i.imgur.com/yVhHZMb.mp4', title: 'Home Page & DropDown' },
-                                        { url: 'https://i.imgur.com/ifEoNri.mp4', title: 'Shop Page & CheckOut' },
-                                        { url: 'https://i.imgur.com/4CX0UaN.mp4', title: 'Admin Dashboard' }
-                                    ]} // Array of image URLs
-                                    projectDetails='Full product management, User Auth, Payment processing | React | Node.js | Express.js | MongoDB | Square SDK | Clouninary API | Google API'
-                                    liveSiteUrl="https://herbanaturalco.com/"
-                                    githubUrl="https://github.com/Austin1serb/Xhale-Vapor-N-Smoke"
-                                    isEven={1 % 2 === 0}
 
-                                />
+                    <div className='projects-container'>
+                        <Suspense fallback={<ProjectSkeleton isEven={1} />
+                        }>
+                            <Project
+                                projectName="Ecommerce Website"
+                                images={[
+                                    { url: 'https://i.imgur.com/yVhHZMb.gif', title: 'Home Page & DropDown' },
+                                    { url: 'https://i.imgur.com/ifEoNri.gif', title: 'Shop Page & CheckOut' },
+                                    { url: 'https://i.imgur.com/4CX0UaN.gif', title: 'Admin Dashboard' }
+                                ]} // Array of image URLs
+                                projectDetails='Full product management, User Auth, Payment processing | React | Node.js | Express.js | MongoDB | Square SDK | Clouninary API | Google API'
+                                liveSiteUrl="https://herbanaturalco.com/"
+                                githubUrl="https://github.com/Austin1serb/Xhale-Vapor-N-Smoke"
+                                isEven={1 % 2 === 0}
 
-
-                            </Suspense>
-                            <Suspense fallback={<ProjectSkeleton isEven={2} />}>
+                            />
 
 
-
-                                <Project
-                                    projectName="VS Code Extension"
-                                    images={[
-                                        { url: 'https://i.imgur.com/vd78xiw.png', title: 'Avaliable on VScode' },
-                                        { url: 'https://i.imgur.com/YsJ7Zwb.mp4', title: 'Complex Code Generation' },
-                                        { url: 'https://i.imgur.com/B73mnGD.mp4', title: 'Context Aware' },
-                                        { url: 'https://i.imgur.com/vRPRj0i.mp4', title: 'Great at algorithms' }
-                                    ]} // Array of image URLs
-                                    projectDetails="This extension revolutionizes your coding experience by introducing context-aware functionality. It intelligently recognizes the programming language you're working in and utilizes your comments to generate optimal code snippets/Full Documents."
-                                    liveSiteUrl="https://marketplace.visualstudio.com/items?itemName=SerbByteDevelopment.gpt-code-generator"
-                                    githubUrl="https://github.com/Austin1serb/GPT-Generator-vsCodeExtension"
-                                    isEven={2 % 2 === 0}
-                                />
-
-
-                            </Suspense>
-                            <Suspense fallback={<ProjectSkeleton isEven={3} />}>
+                        </Suspense>
+                        <Suspense fallback={<ProjectSkeleton isEven={2} />}>
 
 
 
-                                <Project
-                                    projectName="Payment Form"
-                                    images={[
-                                        { url: 'https://i.imgur.com/GOncx4t.png', title: 'Square Payment Form' },
-                                        { url: 'https://i.imgur.com/VeBprNm.png', title: 'Card validation by Square Payment SDK' },
-                                    ]}
-                                    projectDetails="Enhance your e-commerce platform with our streamlined Square Payment Component. It offers a reuseable, secure, user-friendly checkout component, ensuring smooth and efficient transactions for both merchants and customers."
-                                    liveSiteUrl={null}
-                                    githubUrl="https://github.com/Austin1serb/SQUARE_PAYMENT_FORM"
-                                    isEven={3 % 2 === 0}
-                                />
+                            <Project
+                                projectName="VS Code Extension"
+                                images={[
+                                    { url: 'https://i.imgur.com/vd78xiw.png', title: 'Avaliable on VScode' },
+                                    { url: 'https://i.imgur.com/YsJ7Zwb.gif', title: 'Complex Code Generation' },
+                                    { url: 'https://i.imgur.com/B73mnGD.gif', title: 'Context Aware' },
+                                    { url: 'https://i.imgur.com/vRPRj0i.gif', title: 'Great at algorithms' }
+                                ]} // Array of image URLs
+                                projectDetails="This extension revolutionizes your coding experience by introducing context-aware functionality. It intelligently recognizes the programming language you're working in and utilizes your comments to generate optimal code snippets/Full Documents."
+                                liveSiteUrl="https://marketplace.visualstudio.com/items?itemName=SerbByteDevelopment.gpt-code-generator"
+                                githubUrl="https://github.com/Austin1serb/GPT-Generator-vsCodeExtension"
+                                isEven={2 % 2 === 0}
+                            />
 
 
-                            </Suspense>
-                            <Suspense fallback={<ProjectSkeleton isEven={4} />}>
-
-                                <Project
-                                    projectName="Task Manager"
-                                    images={[
-                                        { url: 'https://i.imgur.com/jNXYWhV.png', title: 'Dashboard' },
-                                        { url: 'https://i.imgur.com/hsrtTbz.png', title: 'User Task List' },
-                                        { url: 'https://i.imgur.com/FFnr0hY.png', title: 'Modify Task Form' },
-                                    ]}
-                                    projectDetails="Task Manager is a sleek, full-stack web application utilizing the MERN stack for efficient task management. It features user-friendly account creation, task addition, editing, and viewing, streamlining the way users organize and track their tasks."
-                                    liveSiteUrl={null}
-                                    githubUrl="https://github.com/Austin1serb/MERN-APP"
-                                    isEven={4 % 2 === 0}
-                                />
+                        </Suspense>
+                        <Suspense fallback={<ProjectSkeleton isEven={3} />}>
 
 
-                            </Suspense>
-                        </div>
+
+                            <Project
+                                projectName="Payment Form"
+                                images={[
+                                    { url: 'https://i.imgur.com/GOncx4t.png', title: 'Square Payment Form' },
+                                    { url: 'https://i.imgur.com/VeBprNm.png', title: 'Card validation by Square Payment SDK' },
+                                ]}
+                                projectDetails="Enhance your e-commerce platform with our streamlined Square Payment Component. It offers a reuseable, secure, user-friendly checkout component, ensuring smooth and efficient transactions for both merchants and customers."
+                                liveSiteUrl={null}
+                                githubUrl="https://github.com/Austin1serb/SQUARE_PAYMENT_FORM"
+                                isEven={3 % 2 === 0}
+                            />
+
+
+                        </Suspense>
+                        <Suspense fallback={<ProjectSkeleton isEven={4} />}>
+
+                            <Project
+                                projectName="Task Manager"
+                                images={[
+                                    { url: 'https://i.imgur.com/jNXYWhV.png', title: 'Dashboard' },
+                                    { url: 'https://i.imgur.com/hsrtTbz.png', title: 'User Task List' },
+                                    { url: 'https://i.imgur.com/FFnr0hY.png', title: 'Modify Task Form' },
+                                ]}
+                                projectDetails="Task Manager is a sleek, full-stack web application utilizing the MERN stack for efficient task management. It features user-friendly account creation, task addition, editing, and viewing, streamlining the way users organize and track their tasks."
+                                liveSiteUrl={null}
+                                githubUrl="https://github.com/Austin1serb/MERN-APP"
+                                isEven={4 % 2 === 0}
+                            />
+
+
+                        </Suspense>
+                    </div>
 
                 </section>
                 <section className='about' ref={contactRef}>
@@ -267,20 +271,19 @@ useEffect(() => {
                     </div>
                     <div className='contact-container' >
                         {/*<ContactForm />*/}
-                        <Suspense fallback={  <ContactSkeleton/>}>
+                        <Suspense fallback={<ContactSkeleton />}>
                             <Contact />
-                            </Suspense >
+                        </Suspense >
 
                     </div>
                 </section>
-                    <Suspense fallback={<></>}>
-                        <Footer homeRef={homeRef} />
-                    </Suspense>
-                
+                <Suspense fallback={<></>}>
+                    <Footer homeRef={homeRef} />
+                </Suspense>
+
             </main>
 
         </div>
-
     );
 };
 
