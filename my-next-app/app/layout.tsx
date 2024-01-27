@@ -22,6 +22,13 @@ export default function RootLayout({
   type="image/"
   sizes="any"
 />
+<meta property="og:title" content="Austin Serb - Full Stack Developer | Portfolio" />
+    <meta property="og:description" content="Discover the portfolio of Austin Serb, a skilled Full Stack Developer with a passion for crafting efficient, scalable web solutions. Explore projects, skills, and experiences that demonstrate my expertise in full-stack development." />
+    <meta property="og:image" content="https://i.imgur.com/9yEqyVp.png" />
+    <meta property="og:url" content="new-profile-app-v2.vercel.app" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.ico" />
+
       </head>
       <html lang="en">
         <body>{children}</body>
