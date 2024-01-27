@@ -32,6 +32,9 @@ export default function RootLayout({
         <link rel="icon" href="/icon.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       </head>
       <html lang="en">
         <body>{children}</body>
