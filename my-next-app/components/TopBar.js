@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import  '../styles/TopBar.css'
+import '../styles/TopBar.css'
 import useThrottle from '../utilities/useThrottle'; // Import your throttle utility
 
 const TopBar = ({ homeRef, aboutRef, projectsRef, contactRef }) => {
@@ -33,7 +33,7 @@ const TopBar = ({ homeRef, aboutRef, projectsRef, contactRef }) => {
 
         window.addEventListener('scroll', throttledScroll);
         return () => window.removeEventListener('scroll', throttledScroll);
-    }, [homeRef, aboutRef, projectsRef, contactRef,throttledScroll]);
+    }, [homeRef, aboutRef, projectsRef, contactRef, throttledScroll]);
 
 
     const scrollToRef = (ref) => {
@@ -45,22 +45,26 @@ const TopBar = ({ homeRef, aboutRef, projectsRef, contactRef }) => {
         }
     };
     return (
+
         <nav className='topBar'>
-            <div className='leftLinks'>
-                <button onClick={() => scrollToRef(homeRef)}>
-                    <span className={`leftLinks-button ${activeSection === 'home' ? 'active' : ''}`}>Home</span>
-                </button>
-                <button onClick={() => scrollToRef(aboutRef)}>
-                    <span className={`leftLinks-button ${activeSection === 'about' ? 'active' : ''}`}>About</span>
-                </button>
-                <button onClick={() => scrollToRef(projectsRef)}>
-                    <span className={`leftLinks-button ${activeSection === 'projects' ? 'active' : ''}`}>Projects</span>
-                </button>
-                <button onClick={() => scrollToRef(contactRef)}>
-                    <span className={`leftLinks-button ${activeSection === 'contact' ? 'active' : ''}`}>Contact</span>
-                </button>
+            <div className='topBar-container'>
+                <div className='leftLinks'>
+                    <button onClick={() => scrollToRef(homeRef)}>
+                        <span className={`leftLinks-button ${activeSection === 'home' ? 'active' : ''}`}>Home</span>
+                    </button>
+                    <button onClick={() => scrollToRef(aboutRef)}>
+                        <span className={`leftLinks-button ${activeSection === 'about' ? 'active' : ''}`}>About</span>
+                    </button>
+                    <button onClick={() => scrollToRef(projectsRef)}>
+                        <span className={`leftLinks-button ${activeSection === 'projects' ? 'active' : ''}`}>Projects</span>
+                    </button>
+                    <button onClick={() => scrollToRef(contactRef)}>
+                        <span className={`leftLinks-button ${activeSection === 'contact' ? 'active' : ''}`}>Contact</span>
+                    </button>
+                </div>
             </div>
         </nav>
+
     );
 };
 

@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
 import '../styles/project.css'
 
-const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl,isEven }) => {
+const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl, isEven }) => {
 
 
     const projectContainerClass = !isEven ? "project-container" : "project-container-reverse";
@@ -17,7 +17,7 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl,i
         slidesToShow: 1,
         slidesToScroll: 1,
     };
-    
+
     return (
         <div className={projectContainerClass}>
             <div className='mobile-project-title'>
@@ -49,14 +49,14 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl,i
                     <span>
                         {projectDetails}
                     </span>
-                    <div>
-                    {liveSiteUrl ?
-                    (
-                        <a aria-label={`Link to website: ${projectName}`} className='text-outline text-outline-hover' data-text='Live Site' href={liveSiteUrl} target="_blank" rel="noopener noreferrer">Live Site </a>
-              
-                
-                    ) : null}
-                    <a aria-label={`Learn more about ${projectName}`} className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} targetlear="_blank" rel="noopener noreferrer">Learn More</a>
+                    <div style={{display:'flex', flexDirection:'column'}}>
+                        {liveSiteUrl ?
+                            (
+                                <a aria-label={`Link to website: ${projectName}`} className='text-outline text-outline-hover' data-text='Live Site' href={liveSiteUrl} target="_blank" rel="noopener noreferrer">Live Site </a>
+
+
+                            ) : null}
+                        <a aria-label={`Learn more about ${projectName}`} className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} targetlear="_blank" rel="noopener noreferrer">Learn More</a>
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl,i
                 {liveSiteUrl ?
                     (<>
                         <a className='text-outline text-outline-hover' data-text='Live Site' href={liveSiteUrl} target="_blank" rel="noopener noreferrer">Live Site </a>
-                        <span> | </span>
+                        <span> 〽️ </span>
                     </>
                     ) : null}
                 <a className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} target="_blank" rel="noopener noreferrer">Learn More</a>

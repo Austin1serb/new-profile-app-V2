@@ -1,3 +1,4 @@
+import './globals.css'
 
 
 
@@ -5,6 +6,7 @@ export const metadata = {
   icons: {
     icon: "/icon.png",
   },
+
 }
 
 export default function RootLayout({
@@ -17,10 +19,10 @@ export default function RootLayout({
       <head>
         <title>Austin Serb - Full Stack Developer | Portfolio</title>
         <meta name="description" content="Discover the portfolio of Austin Serb, a skilled Full Stack Developer with a passion for crafting efficient, scalable web solutions. Explore projects, skills, and experiences that demonstrate my expertise in full-stack development." />
-        <link rel="icon" href="favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.png" sizes="any" />
         <link
           rel="apple-touch-icon"
-          href="/favicon.ico"
+          href="/icon.png"
           type="image/"
           sizes="any"
         />

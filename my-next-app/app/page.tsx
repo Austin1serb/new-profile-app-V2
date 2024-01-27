@@ -7,7 +7,6 @@ import TopBar from '../components/TopBar';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import '../styles/index.css'
-import './globals.css'
 import ProjectSkeleton from '../skeletons/ProjectSkeleton';
 import Project from '../components/Project';
 import FooterSkeleton from '../skeletons/FooterSkeleton'
@@ -39,13 +38,6 @@ const Contact = dynamic<ComponentProps>(
         )
     }
 );
-//const Contact = dynamic(
-//    () => import('../components/Contact'),
-//    { ssr:
-
-//    true, loading: () => <></> }
-//);
-
 
 
 const Home = () => {
@@ -193,13 +185,13 @@ const Home = () => {
                         <Suspense fallback={<ProjectSkeleton isEven={1} />
                         }>
                             <Project
-                                projectName="Ecommerce Website"
+                                projectName="Online Store"
                                 images={[
                                     { url: 'https://i.imgur.com/yVhHZMb.gif', title: 'Home Page & DropDown' },
                                     { url: 'https://i.imgur.com/ifEoNri.gif', title: 'Shop Page & CheckOut' },
                                     { url: 'https://i.imgur.com/4CX0UaN.gif', title: 'Admin Dashboard' }
                                 ]} // Array of image URLs
-                                projectDetails='Full product management, User Auth, Payment processing | React | Node.js | Express.js | MongoDB | Square SDK | Clouninary API | Google API'
+                                projectDetails='Elegantly designed eCommerce site with a user-friendly cart, responsive layout, and seamless user registration. Features a comprehensive Admin Dashboard for complete product and order management.'
                                 liveSiteUrl="https://herbanaturalco.com/"
                                 githubUrl="https://github.com/Austin1serb/Xhale-Vapor-N-Smoke"
                                 isEven={1 % 2 === 0}
