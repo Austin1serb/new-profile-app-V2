@@ -21,7 +21,7 @@ const startTime = Date.now();
 function getCurrentColor() {
     const elapsedTime = (Date.now() - startTime) % colorDuration;
     const factor = (1 + Math.sin(2 * Math.PI * elapsedTime / colorDuration)) / 2; // Oscillates between 0 and 1
-    return interpolateColor([0, 0, 255], [255, 0, 0], factor); // Blue and Red
+    return interpolateColor([0, 0, 255], [255, 77, 49], factor); // Blue and Red
 }
 const CanvasDots = ({ isMobile, screenWidth, screenHeight }) => {
     const canvasRef = useRef(null);
@@ -175,17 +175,17 @@ const CanvasDots = ({ isMobile, screenWidth, screenHeight }) => {
         const missile = new Missile();
 
         const dots = {
-            nb: isMobile ? 280 : 350,
+            nb: isMobile ? 180 : 350,
             distance: isMobile ? 60 : 90,
             array: [],
             mouseDotIndex: 1
         };
 
         // New variables for customization
-        const lineWidth = 1.2; // Set the desired line width
+        const lineWidth = isMobile ? 0.7 : 1.2; // Set the desired line width
         const mouseEffectDistance = 300; // Set the maximum distance for mouse effect
         const minRadius = 1.2; // Minimum radius of dots
-        const maxRadius = 5; // Maximum radius of dots when close to the mouse
+        const maxRadius = isMobile ? 3.5 : 5; // Maximum radius of dots when close to the mouse
 
         class Dot {
             constructor() {
@@ -216,8 +216,8 @@ const CanvasDots = ({ isMobile, screenWidth, screenHeight }) => {
                 ctx.fillStyle = `rgb(${currentColor[0]}, ${currentColor[1]}, ${currentColor[2]})`;
                 ctx.fill();
             }
-      
-        
+
+
             damping = 0.95;
             maxVelocity = 7;
 
@@ -321,7 +321,7 @@ const CanvasDots = ({ isMobile, screenWidth, screenHeight }) => {
             const rect = canvasRef.current.getBoundingClientRect();
             const scaleX = canvasRef.current.width / rect.width;   // Relationship bitmap vs. element for X
             const scaleY = canvasRef.current.height / rect.height; // Relationship bitmap vs. element for Y
-        
+
             if (isMobile && e.touches) {
                 x = (e.touches[0].clientX - rect.left) * scaleX;
                 y = (e.touches[0].clientY - rect.top) * scaleY;
@@ -329,10 +329,10 @@ const CanvasDots = ({ isMobile, screenWidth, screenHeight }) => {
                 x = (e.clientX - rect.left) * scaleX;
                 y = (e.clientY - rect.top) * scaleY;
             }
-        
+
             launchMissile(x, y);
         }
-        
+
         if (isMobile) {
             mousePosition.x += 300
             mousePosition.y += 300
@@ -342,7 +342,7 @@ const CanvasDots = ({ isMobile, screenWidth, screenHeight }) => {
 
 
         }
-        const handleMouseMove = (e)=> {
+        const handleMouseMove = (e) => {
             mousePosition.x = e.pageX;
             mousePosition.y = e.pageY;
 
