@@ -54,13 +54,12 @@
 }
 
 .image-title {
-    text-transform: uppercase;
     margin: 5px;
 
 }
 
 .image-title span {
-    color: #D3D4D8;
+    color: #d3d4d89a;
 
 }
 
@@ -107,6 +106,7 @@
 }
 
 .text-outline {
+       text-transform: uppercase;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-color: currentColor;
     -webkit-text-stroke-width: .042em;
@@ -511,6 +511,7 @@
     }
 
     .project-slider-reverse {
+        padding-top: 20px;
         padding: 60px;
         z-index: 2
     }
