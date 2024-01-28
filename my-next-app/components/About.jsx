@@ -41,7 +41,7 @@ const About = () => {
                 <div className='profile-description'>
                     <div ></div>
                     <h2>
-                    "My name is Austin Serb, and I&apos;m a full-stack developer with a unique blend of artistic vision, technical expertise, and a knack for solving complex problems. My journey in web development is driven by a passion for creative problem-solving and a commitment to building visually appealing and functionally robust websites with fully efficient backends.
+                    My name is Austin Serb, and I&apos;m a full-stack developer with a unique blend of artistic vision, technical expertise, and a knack for solving complex problems. My journey in web development is driven by a passion for creative problem-solving and a commitment to building visually appealing and functionally robust websites with fully efficient backends.
 
 </h2>
                 </div>
