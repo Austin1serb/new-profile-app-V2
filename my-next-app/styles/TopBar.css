@@ -16,7 +16,7 @@
 
 
 .leftLinks {
-    color: DCDCDC;
+    color: #DCDCDC;
     display: flex;
     gap: 20%;
     font-size: 22px;
@@ -30,6 +30,7 @@
 
 }
 .leftLinks-button {
+    color:white;
     display: inline-block;
     position: relative;
     cursor: pointer;
