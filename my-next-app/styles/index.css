@@ -24,14 +24,11 @@ body{
 * {
     margin: 0;
     padding: 0;
-    color: #dcdcdc;
-    
-
 }
 *, *::before, *::after {
     box-sizing: border-box;
   }
-  
+
 ::selection {
     background-color: #073ca1;
     color: #dcdcdc
@@ -69,6 +66,12 @@ canvas {
 .connecting-dots {
     background-color: #171717
 }
+
+@media(max-width:800px){
+    .connecting-dots {
+        background-color: black
+    }
+}
 .connecting-dots svg{
     transform: rotate(180deg);
     transform-origin: center;
@@ -85,7 +88,7 @@ canvas {
 
 .header-container {
     position: absolute;
-    color: #dcdcdc;
+    color: white;
     top: 40%;
     right: 30%;
     width: 450px;
@@ -100,6 +103,7 @@ canvas {
 }
 
 .header-index {
+
     line-height: 40px;
     transform: translate3d(0, 0, 0);
 }

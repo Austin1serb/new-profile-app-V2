@@ -175,15 +175,15 @@ const CanvasDots = ({ isMobile, screenWidth, screenHeight }) => {
         const missile = new Missile();
 
         const dots = {
-            nb: isMobile ? 180 : 350,
+            nb: isMobile ? screenWidth/2 : 350,
             distance: isMobile ? 60 : 90,
             array: [],
             mouseDotIndex: 1
         };
 
         // New variables for customization
-        const lineWidth = isMobile ? 0.7 : 1.2; // Set the desired line width
-        const mouseEffectDistance = 300; // Set the maximum distance for mouse effect
+        const lineWidth = 1.2; // Set the desired line width
+        const mouseEffectDistance =isMobile?200: 300; // Set the maximum distance for mouse effect
         const minRadius = 1.2; // Minimum radius of dots
         const maxRadius = isMobile ? 3.5 : 5; // Maximum radius of dots when close to the mouse
 
