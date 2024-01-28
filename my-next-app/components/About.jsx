@@ -41,9 +41,9 @@ const About = () => {
                 <div className='profile-description'>
                     <div ></div>
                     <h2>
-                        As a passionate full-stack developer, I thrive in the ever-evolving world of web development, with a focus on JavaScript, React, Next.js, and Python. My enthusiasm is driven by the unique blend of creativity and logic that web development offers, constantly presenting new challenges and learning opportunities.
+                    "My name is Austin Serb, and I&apos;m a full-stack developer with a unique blend of artistic vision, technical expertise, and a knack for solving complex problems. My journey in web development is driven by a passion for creative problem-solving and a commitment to building visually appealing and functionally robust websites with fully efficient backends.
 
-                        Expert in crafting seamless web experiences, I skillfully combine the versatility of Python for backend development with the advanced features of Next.js and React in the frontend. When I&apos;m away from the keyboard, I enjoy drawing, staying active, and socializing, which bring fresh perspectives and balance to my coding life.</h2>
+</h2>
                 </div>
             </div>
             <div className="skills-section">
