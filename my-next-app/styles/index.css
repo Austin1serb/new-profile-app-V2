@@ -180,7 +180,9 @@ canvas {
 .my-work {
     z-index: 3;
     width: 100%;
-    background-color: transparent !important
+    background-color: transparent !important;
+
+
 }
 
 .my-work-container {
@@ -237,7 +239,6 @@ canvas {
     padding: 30px;
     border-radius: 8px;
     background: rgba(40, 47, 72, 1);
-    ;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .55);
     transition: transform .3s;
     cursor: pointer;
@@ -304,6 +305,8 @@ canvas {
 }
 
 .skills-section {
+    font-family: 'Poppins', sans-serif;
+
     margin: 20px 0;
     padding: 20px;
     background: rgba(40, 47, 72, .3);
@@ -404,6 +407,7 @@ canvas {
 }
 
 .profile-description {
+    font-family: 'Poppins', sans-serif;
     margin: 20px;
     text-align: flex-start;
     color: #f0f8ff;
@@ -467,11 +471,13 @@ canvas {
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr))
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      
+
     }
 
     .skill-icon {
-        width: 100px
+        width: 100px;
     }
 
     .profile-picture {
@@ -517,6 +523,9 @@ canvas {
     }
     .skills-grid {
         padding:0;
+    }
+    .skill-title{
+        font-size:12px;
     }
 }
 

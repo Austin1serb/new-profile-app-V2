@@ -4,8 +4,6 @@ import Image from 'next/image';
 import '../styles/index.css'
 import Icon from '../components/Icon'
 
-
-
 const About = () => {
 
     return (
@@ -40,7 +38,7 @@ const About = () => {
                 </div>
                 <div className='profile-description'>
                     <div ></div>
-                    <h2>
+                    <h2 >
                     My name is Austin Serb, and I&apos;m a full-stack developer with a unique blend of artistic vision, technical expertise, and a knack for solving complex problems. My journey in web development is driven by a passion for creative problem-solving and a commitment to building visually appealing and functionally robust websites with fully efficient backends.
 
 </h2>

@@ -16,6 +16,7 @@ const ProjectSkeleton = ({ isEven }) => {
  }
 
  .project-slider {
+    border-radius: 10px;
  background-color: #282f48dc;
  padding: 30px 50px 50px 20px;
  margin-left: 30px;
