@@ -71,8 +71,8 @@
 .carousel-img {
     width: 100%;
     height: auto;
-    filter: brightness(80%) contrast(100%);
-    /*border-radius:10px;*/
+
+    border-radius:10px;
 
 
 }
