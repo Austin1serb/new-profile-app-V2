@@ -10,7 +10,8 @@
 .btn,
 .btn-outline {
     left: 0;
-    transition: 1s ease-in-out
+    transition: 1s ease-in-out;
+
 }
 
 .btn,
@@ -18,6 +19,7 @@
 .btn:hover {
     transition: 1s ease-in-out
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -61,7 +63,7 @@ canvas {
 }
 
 .connecting-dots {
-    /*background-color: #171717;*/
+
     background-image: url('https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover; /* Cover the entire element */
     background-position: center; /* Center the background image */
@@ -88,6 +90,7 @@ canvas {
 }
 
 .header-container {
+    font-family: 'Poppins', sans-serif;
     position: absolute;
     color: white;
     top: 40%;
@@ -130,6 +133,7 @@ canvas {
 }
 
 .name-index {
+    
     color: #FA4D31
 }
 
@@ -138,9 +142,9 @@ canvas {
 .btn {
     top: 120%;
     cursor: pointer;
-    background: 0 0;
-    border: 1px solid #3A8B8D;
-    outline: 0
+    background:#3700B3A5;
+    border: 1px solid #6200EE;
+    outline: 0;
 }
 
 .btn-outline {
@@ -154,7 +158,7 @@ canvas {
 }
 
 .btn:hover {
-    background-color: rgba(100, 183, 192, .7)
+    background-color:#3700B3;
 }
 
 .btn:hover .btn-outline {
@@ -173,12 +177,12 @@ canvas {
 }
 
 .btn span {
-    color: #dcdcdc;
+    color: #fff;
     font-size: 18px;
-    font-weight: 100;
     display: flex;
     align-items: center;
-    margin-left: 20px
+    margin-left: 20px;
+    z-index:5;
 }
 
 .my-work {

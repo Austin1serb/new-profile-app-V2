@@ -16,6 +16,7 @@
 
 
 .leftLinks {
+    font-family: 'Poppins', sans-serif;
     color:white;
     display: flex;
     gap: 20%;
