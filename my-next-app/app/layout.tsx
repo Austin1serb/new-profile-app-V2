@@ -38,7 +38,10 @@ export default function RootLayout({
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />*/}
       </head>
       <html lang="en">
-        <body>{children}</body>
+        <body>
+          {children}
+          <Analytics />
+        </body>
       </html>
     </>
   )
