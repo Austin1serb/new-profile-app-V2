@@ -36,6 +36,7 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl, 
                                     width={500}
                                     className='carousel-img'
                                     loading='lazy'
+                                    quality={100}
                                 />
                             </div>
                         </div>

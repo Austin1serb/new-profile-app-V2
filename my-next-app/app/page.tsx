@@ -201,6 +201,27 @@ const Home = () => {
 
 
                         </Suspense>
+
+                        <Suspense fallback={<ProjectSkeleton isEven={3} />}>
+
+
+
+                            <Project
+                                projectName="Car Dealership UI"
+                                images={[
+                                    // Replace these URLs with actual screenshots of your car dealership project
+                                    { url: 'https://i.imgur.com/GNfokhN.gif', title: 'Car Dealership Homepage' },
+                                    { url: 'https://i.imgur.com/os8of7j.gif', title: 'Inventory Page & Compare View' },
+                                    { url: 'https://i.imgur.com/lfuL0wu.gif', title: 'Finance Form' },
+                                ]}
+                                projectDetails="This project represents the frontend of a modern Car Dealership website, designed to showcase available vehicles and provide detailed information to potential buyers. Features include a dynamic listing page, detailed vehicle profiles, compare features, and a user-friendly interface to enhance the car buying experience."
+                                liveSiteUrl='https://east-lake-auto-brokers.vercel.app/'
+                                githubUrl="https://github.com/Austin1serb/EastLakeAutoBrokers.git"
+                                isEven={2 % 2 === 0}
+                            />
+
+
+                        </Suspense>
                         <Suspense fallback={<ProjectSkeleton isEven={2} />}>
 
 
@@ -209,7 +230,7 @@ const Home = () => {
                                 projectName="VS Code Extension"
                                 images={[
                                     { url: 'https://i.imgur.com/Mf9H0sQ.gif', title: 'Great at algorithms' },
-                                    { url: 'https://i.imgur.com/vd78xiw.png', title:'Avaliable on VScode' },
+                                    { url: 'https://i.imgur.com/vd78xiw.png', title: 'Avaliable on VScode' },
                                     { url: 'https://i.imgur.com/4kMSbrH.gif', title: 'Complex Code Generation' },
                                     { url: 'https://i.imgur.com/4kMSbrH.gif', title: 'Context Aware' },
 
@@ -217,7 +238,7 @@ const Home = () => {
                                 projectDetails="This extension revolutionizes your coding experience by introducing context-aware functionality. It intelligently recognizes the programming language you're working in and utilizes your comments to generate optimal code snippets/Full Documents."
                                 liveSiteUrl="https://marketplace.visualstudio.com/items?itemName=SerbByteDevelopment.gpt-code-generator"
                                 githubUrl="https://github.com/Austin1serb/GPT-Generator-vsCodeExtension"
-                                isEven={2 % 2 === 0}
+                                isEven={3 % 2 === 0}
                             />
 
 
@@ -232,10 +253,11 @@ const Home = () => {
                                     { url: 'https://i.imgur.com/GOncx4t.png', title: 'Square Payment Form' },
                                     { url: 'https://i.imgur.com/VeBprNm.png', title: 'Card validation by Square Payment SDK' },
                                 ]}
-                                projectDetails="Enhance your e-commerce platform with our streamlined Square Payment Component. It offers a reuseable, secure, user-friendly checkout component, ensuring smooth and efficient transactions for both merchants and customers."
+                                projectDetails="Setting up a checkout process can be intricate and time-consuming. To streamline this, I developed a reusable Component designed for easy integration into any project requiring payment processing. Users simply need to insert their API key, and they're set to go. This component is equipped and pre-configured to work with Square's Payment SDK."
+
                                 liveSiteUrl={null}
                                 githubUrl="https://github.com/Austin1serb/SQUARE_PAYMENT_FORM"
-                                isEven={3 % 2 === 0}
+                                isEven={4 % 2 === 0}
                             />
 
 
@@ -252,11 +274,12 @@ const Home = () => {
                                 projectDetails="Task Manager is a sleek, full-stack web application utilizing the MERN stack for efficient task management. It features user-friendly account creation, task addition, editing, and viewing, streamlining the way users organize and track their tasks."
                                 liveSiteUrl={null}
                                 githubUrl="https://github.com/Austin1serb/MERN-APP"
-                                isEven={4 % 2 === 0}
+                                isEven={5 % 2 === 0}
                             />
 
 
                         </Suspense>
+
                     </div>
 
                 </section>
