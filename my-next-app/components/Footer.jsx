@@ -30,11 +30,11 @@ const Footer = ({ homeRef }) => {
                         <Icon name='linkedin' className='footer-svg' height='70' width='70' />
                     </a>
                 </div>
-                <div  className='footer-icon-container'>
+                {/*<div  className='footer-icon-container'>
                     <a href="https://www.facebook.com/austin.serb" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                         <Icon name='facebook' className='footer-svg' height={52} width={52} />
                     </a>
-                </div>
+                </div>*/}
                 <div className='footer-icon-container'>
                     <a href="mailto:austin.serb@icloud.com" aria-label="Email">
                         <Icon name='email' className='footer-svg-mail' height='70' width='70' />
