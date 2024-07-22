@@ -11,6 +11,7 @@ import ProjectSkeleton from '../skeletons/ProjectSkeleton';
 import Project from '../components/Project';
 import FooterSkeleton from '../skeletons/FooterSkeleton'
 import ContactSkeleton from '../skeletons/ContactSkeleton'
+import Popup from '../components/PopUp';
 
 interface ComponentProps {
 }
@@ -54,6 +55,7 @@ const Home = () => {
     const aboutRef = useRef<HTMLDivElement>(null);
     const projectsRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
+    const [showPopup, setShowPopup] = useState(true); // State to control popup visibility
 
 
 
@@ -128,12 +130,28 @@ const Home = () => {
         }
     };
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowPopup(false);
+            console.log('sfsfsf')
+        }, 5000); // Close after 5 seconds
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    const closePopup = () => {
+        setShowPopup(false);
+    };
+
+
     return (
         <div className='main-container'>
+            {showPopup && <Popup closePopup={closePopup} />}
+
             <div className='top-container' ref={homeRef}></div>
             <header className='header-container'>
                 <h1 className='header-index'>
-                    Hello, I'm <span className='name-index'>Austin.</span> <br />
+                    Hello, I'm <span className='name-index'>Austin Serb.</span> <br />
                     I'm <span className="phrase">{currentPhrase}</span>
                     <span className="cursor">|</span>
                     <br />

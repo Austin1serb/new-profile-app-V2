@@ -50,7 +50,7 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl, 
                     <span>
                         {projectDetails}
                     </span>
-                    <div style={{display:'flex', flexDirection:'column'}}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
                         {liveSiteUrl ?
                             (
                                 <a aria-label={`Link to website: ${projectName}`} className='text-outline text-outline-hover' data-text='Live Site' href={liveSiteUrl} target="_blank" rel="noopener noreferrer">Live Site </a>
@@ -65,10 +65,13 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl, 
             <div className='project-details-mobile'>
                 {liveSiteUrl ?
                     (<>
+
+                        <span>  🌐 </span>
                         <a className='text-outline text-outline-hover' data-text='Live Site' href={liveSiteUrl} target="_blank" rel="noopener noreferrer">Live Site </a>
-                        <span> 〽️ </span>
+                
                     </>
                     ) : null}
+        <span> 🔍 </span>
                 <a className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} target="_blank" rel="noopener noreferrer">Learn More</a>
             </div>
         </div>
