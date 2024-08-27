@@ -11,7 +11,7 @@ import ProjectSkeleton from '../skeletons/ProjectSkeleton';
 import Project from '../components/Project';
 import FooterSkeleton from '../skeletons/FooterSkeleton'
 import ContactSkeleton from '../skeletons/ContactSkeleton'
-import Popup from '../components/PopUp';
+import Popup from '@/components/Popup';
 
 interface ComponentProps {
 }
