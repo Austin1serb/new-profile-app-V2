@@ -57,7 +57,11 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl, 
 
 
                             ) : null}
-                        <a aria-label={`Learn more about ${projectName}`} className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} target="_blank" rel="noopener noreferrer">Learn More</a>
+                        {githubUrl && (
+                            <>
+                                <a aria-label={`Learn more about ${projectName}`} className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} target="_blank" rel="noopener noreferrer">Learn More</a>
+                            </>
+                        )}
                     </div>
                 </div>
 
@@ -68,11 +72,15 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl, 
 
                         <span>  🌐 </span>
                         <a className='text-outline text-outline-hover' data-text='Live Site' href={liveSiteUrl} target="_blank" rel="noopener noreferrer">Live Site </a>
-                
+
                     </>
                     ) : null}
-        <span> 🔍 </span>
-                <a className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} target="_blank" rel="noopener noreferrer">Learn More</a>
+                {githubUrl && (
+                    <>
+                        <span> 🔍 </span>
+                        <a className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} target="_blank" rel="noopener noreferrer">Learn More</a>
+                    </>
+                )}
             </div>
         </div>
     );
