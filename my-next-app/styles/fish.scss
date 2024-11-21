@@ -1,228 +1,230 @@
 .fish-cont {
-    position: relative;
-    z-index: 5;
-    margin-top: 50px;
-    margin-bottom: 620px;
+  position: relative;
+  z-index: 5;
+  margin-top: 50px;
+  margin-bottom: 820px;
+  scale: 1.3;
+}
 
+@media (max-width: 500px) {
+  .fish-cont {
+    margin-bottom: 620px;
+    scale: 1;
+  }
 }
 
 .fish-container {
-    position: absolute;
-    top: 60%; // Adjust as needed
-    right: 100%; // Adjust as needed
-    z-index: 4; // Below the form elements in stacking order
-    max-width: 100vw;
-
+  position: absolute;
+  top: 60%; // Adjust as needed
+  right: 100%; // Adjust as needed
+  z-index: 4; // Below the form elements in stacking order
+  max-width: 100vw;
 }
-
-
-
 
 $color: rgb(254, 78, 78);
 $colorSecondary: rgb(255, 123, 0);
 
-
 @keyframes fish {
+  0%,
+  70% {
+    opacity: 0;
+  }
 
-    0%,
-    70% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 .fish {
-    width: 640px;
-    height: auto;
-    position: absolute;
-    top: -485px;
-    left: -177px;
-    animation: fish 3s forwards ease-in-out;
-    z-index: 1;
+  width: 640px;
+  height: auto;
+  position: absolute;
+  top: -485px;
+  left: -177px;
+  animation: fish 3s forwards ease-in-out;
+  z-index: 1;
 
+  path {
+    fill: #fff; //fish color
 
-    path {
-        fill: #fff; //fish color
-
-        &:hover {
-            fill: $colorSecondary;
-        }
+    &:hover {
+      fill: $colorSecondary;
     }
+  }
 
-    .line {
-        fill: none;
-    }
+  .line {
+    fill: none;
+  }
 }
 
 .fish-shadow {
-    width: 640px;
-    height: auto;
-    position: absolute;
-    top: -445px;
-    left: -177px;
-    animation: fish 3s forwards ease-in-out;
+  width: 640px;
+  height: auto;
+  position: absolute;
+  top: -445px;
+  left: -177px;
+  animation: fish 3s forwards ease-in-out;
 
-    path {
-        fill: black;
+  path {
+    fill: black;
 
-        &:hover {
-            fill: $colorSecondary;
-        }
+    &:hover {
+      fill: $colorSecondary;
     }
+  }
 
-    .line {
-        fill: none;
-    }
+  .line {
+    fill: none;
+  }
 }
 
 .fish-shadow-con {
-    opacity: 1;
-    filter: blur(10px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0vw;
+  opacity: 1;
+  filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0vw;
 }
 
 .container {
-    position: relative;
-    left: -99%;
-    background-color: #282F48;
+  position: relative;
+  left: -99%;
+  background-color: #282f48;
+  border-radius: 10px;
+  margin: 40px;
+  padding: 25px 20px 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  height: 520px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 150px;
+    left: 0;
+    bottom: 220px;
+    right: 0;
+    height: 60%;
+    background-color: #282f48;
     border-radius: 10px;
-    margin: 40px;
-    padding: 25px 20px 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    width: 320px;
-    height: 520px;
-
-
-    &:before {
-        content: "";
-        position: absolute;
-        top: 150px;
-        left: 0;
-        bottom: 220px;
-        right: 0;
-        height: 60%;
-        background-color: #282F48;
-        border-radius: 10px;
-        z-index: 5;
-    }
+    z-index: 5;
+  }
 }
 
 .card {
-    position: relative;
-    z-index: 5;
-
+  position: relative;
+  z-index: 5;
 }
 
 .card_title {
-    font-size: 24px;
-    margin: 0;
-    color: #F5F5F5;
+  font-size: 28px;
+  margin: 0;
+  color: #f5f5f5;
 }
 
 .card_title-info {
-    font-size: 14px;
-    margin: 7px 0 10px;
+  font-size: 14px;
+  margin: 7px 0 10px;
 }
 
 .card_button {
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    width: 100%;
-    padding: 0 15px;
-    font-size: 18px;
-    line-height: 36px;
-    font-weight: 500;
-    margin: 25px 0 10px;
-    color: #fff;
-    background: linear-gradient($colorSecondary, $color);
-    box-shadow: 0 2px 12px -3px $color;
-    animation: btn 6.0s 3s infinite ease-in-out;
-    opacity: 0.8;
-    transition: all 0.3s;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 18px;
+  line-height: 36px;
+  font-weight: 500;
+  margin: 25px 0 10px;
+  color: #fff;
+  background: linear-gradient($colorSecondary, $color);
+  box-shadow: 0 2px 12px -3px $color;
+  animation: btn 6s 3s infinite ease-in-out;
+  opacity: 0.8;
+  transition: all 0.3s;
 
-    &:hover {
-        opacity: 1;
-        box-shadow: 0 2px 2px -3px $color;
-        cursor: pointer;
-    }
+  &:hover {
+    opacity: 1;
+    box-shadow: 0 2px 2px -3px $color;
+    cursor: pointer;
+  }
 }
 
 .card_info {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .input {
-    display: flex;
-    flex-direction: column-reverse;
-    position: relative;
-    padding-top: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  padding-top: 10px;
 
-    &+.input {
-        margin-top: 10px;
-    }
+  & + .input {
+    margin-top: 10px;
+  }
 }
 
 .input_label {
-    color: #8597a3;
-    position: absolute;
-    top: 20px;
-    transition: all 0.3s;
+  color: #8597a3;
+  position: absolute;
+  top: 26px;
+  transition: all 0.3s;
 }
 
 .card_form {
-    z-index: 5;
+  z-index: 5;
 }
 
 .input_field {
-    border: 0;
-    padding: 0;
-    z-index: 4;
-    background-color: transparent;
-    border-bottom: 2px solid #F5F5F5;
-    font: inherit;
-    font-size: 28px;
-    line-height: 40px;
-    position: relative; // Make sure the position is set to relative
+  border: 0;
+  padding: 0;
+  z-index: 4;
+  background-color: transparent;
+  border-bottom: 2px solid #f5f5f5;
+  font: inherit;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-left: 10px;
+  line-height: 40px;
+  position: relative;
+  max-height: 230px;
+  max-width: 275px;
+  min-height: 50px;
+  &:focus,
+  &:valid {
+    outline: 0;
+    background: #282828;
+    border-bottom-color: #fa4d31;
+  }
 
-    &:focus,
-    &:valid {
-        outline: 0;
-        background: #282828;
-        border-bottom-color: #FA4D31;
-    }
-
-    &:focus+.input_label,
-    &:valid+.input_label {
-        color: #9f918f;
-        transform: translate(5px, -20px);
-        padding: 5px;
-        font-size: 12px;
-        z-index: 6;
-    }
+  &:focus + .input_label,
+  &:valid + .input_label {
+    color: #9f918f;
+    transform: translate(5px, -20px);
+    padding: 5px;
+    font-size: 12px;
+    z-index: 6;
+  }
 }
 
 .input_eye {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 36px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 36px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    svg {
-        width: 24px;
-        height: auto;
-        stroke: #8597a3;
-    }
+  svg {
+    width: 24px;
+    height: auto;
+    stroke: #8597a3;
+  }
 }
 
 //@media(max-width:600px){
@@ -232,46 +234,43 @@ $colorSecondary: rgb(255, 123, 0);
 //}
 
 .popover {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    background-color: #282828;
-    color: #F5F5F5;
-    border: 1px solid black;
-    border-radius: 5px;
-    z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: #282828;
+  color: #f5f5f5;
+  border: 1px solid black;
+  border-radius: 5px;
+  z-index: 1000;
 }
 
 .card_button:disabled {
-    color: #999;
-    /* Optional: change text color */
+  color: #999;
+  /* Optional: change text color */
 
-    cursor: not-allowed;
-    filter: grayscale(100%);
-    /* Apply grayscale */
+  cursor: not-allowed;
+  filter: grayscale(100%);
+  /* Apply grayscale */
 }
-
-
 
 //skeleton::after
 @keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
 
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 .animate-pulse {
-    animation: pulse 1.5s infinite ease-in-out;
+  animation: pulse 1.5s infinite ease-in-out;
 }
 
 .bg-gray-300 {
-    background-color: rgba(204, 204, 204, 0.75); // Or any color you prefer
+  background-color: rgba(204, 204, 204, 0.75); // Or any color you prefer
 }
