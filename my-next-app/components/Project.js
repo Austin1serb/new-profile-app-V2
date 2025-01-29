@@ -1,8 +1,8 @@
-import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
 import '../styles/project.css'
+import Link from 'next/link';
 
 const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl, isEven }) => {
 
@@ -21,12 +21,18 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl, 
     return (
         <div className={projectContainerClass}>
             <div className='mobile-project-title'>
-                <h3 className='text-outline text-outline-hover' data-text={projectName}>{projectName}</h3>
+                <h3 className='text-outline text-outline-hover' data-text={projectName}>
+                    <Link aria-label={`Link to website: ${projectName}`} data-text='Live Site' href={liveSiteUrl} target="_blank" rel="noopener ">  {projectName}</Link>
+                </h3>
             </div>
             <div className={projectSliderClass}>
                 <Slider {...settings}>
                     {images.map((item, index) => (
-                        <div key={item.title} className='carousel-inner'>
+                        <Link
+                            href={liveSiteUrl}
+                            title={projectName}
+                            aria-label={`Link to website: ${projectName}`}
+                            key={item.title + index} className='carousel-inner'>
                             <div className="image-title"> <span> {item.title} </span> </div>
                             <div className='image-img-container' >
                                 <Image
@@ -39,13 +45,18 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl, 
                                     quality={100}
                                 />
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </Slider>
             </div>
 
             <div className="project-details">
-                <h3 className='text-outline text-outline-hover' data-text={projectName}>{projectName}</h3>
+                <Link aria-label={`Link to website: ${projectName}`} data-text='Live Site' href={liveSiteUrl} target="_blank" rel="noopener ">
+                    <h3 className='text-outline text-outline-hover' data-text={projectName}>
+                        {projectName}
+
+                    </h3>
+                </Link>
                 <div className='project-details-cont'>
                     <span>
                         {projectDetails}
@@ -53,13 +64,13 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl, 
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                         {liveSiteUrl ?
                             (
-                                <a aria-label={`Link to website: ${projectName}`} className='text-outline text-outline-hover' data-text='Live Site' href={liveSiteUrl} target="_blank" rel="noopener noreferrer">Live Site </a>
+                                <Link aria-label={`Link to website: ${projectName}`} className='text-outline text-outline-hover' data-text='Live Site' href={liveSiteUrl} target="_blank" rel="noopener ">Live Site </Link>
 
 
                             ) : null}
                         {githubUrl && (
                             <>
-                                <a aria-label={`Learn more about ${projectName}`} className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} target="_blank" rel="noopener noreferrer">Learn More</a>
+                                <Link aria-label={`Learn more about ${projectName}`} className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} target="_blank" rel="noopener ">Learn More</Link>
                             </>
                         )}
                     </div>
@@ -71,14 +82,14 @@ const Project = ({ projectName, images, projectDetails, liveSiteUrl, githubUrl, 
                     (<>
 
                         <span>  🌐 </span>
-                        <a className='text-outline text-outline-hover' data-text='Live Site' href={liveSiteUrl} target="_blank" rel="noopener noreferrer">Live Site </a>
+                        <a className='text-outline text-outline-hover' data-text='Live Site' href={liveSiteUrl} target="_blank" rel="noopener ">Live Site </a>
 
                     </>
                     ) : null}
                 {githubUrl && (
                     <>
                         <span> 🔍 </span>
-                        <a className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} target="_blank" rel="noopener noreferrer">Learn More</a>
+                        <a className='text-outline text-outline-hover' data-text='Learn More' href={githubUrl} target="_blank" rel="noopener ">Learn More</a>
                     </>
                 )}
             </div>
