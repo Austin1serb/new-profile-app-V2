@@ -3,8 +3,8 @@
 
 ## 🌎 Explore My Work
 🔹 **Need a cutting-edge website?** Visit: [Serbyte Web Design & Development](https://www.serbyte.net/)  
-🔹 **Looking for a Full-Stack Developer?** See my work: [Austin Serb’s Portfolio](https://www.serbyte.net/recruiter)  
+🔹 **Looking for a Full-Stack Developer?** See my work: [Austin Serb | Web Developer Portfolio](https://www.austinserb.com)
 
 ## 🔗 Connect With Me
-📧 Email: [info@serbyte.net](mailto:info@serbyte.net)  
+📧 Email: [owner@serbyte.net](mailto:info@serbyte.net)  
 🔗 LinkedIn: [Austin Serb](https://www.linkedin.com/in/austin-serb)  
